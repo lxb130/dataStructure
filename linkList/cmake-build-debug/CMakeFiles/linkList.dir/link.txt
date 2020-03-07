@@ -1,3 +1,0 @@
-E:\CLion\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\linkList.dir/objects.a
-E:\mingw64\bin\ar.exe cr CMakeFiles\linkList.dir/objects.a @CMakeFiles\linkList.dir\objects1.rsp
-E:\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\linkList.dir/objects.a -Wl,--no-whole-archive  -o linkList.exe -Wl,--out-implib,liblinkList.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\linkList.dir\linklibs.rsp
