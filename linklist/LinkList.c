@@ -13,7 +13,7 @@ LinkList *initLinkListHead()
 {
     LinkList *p = (LinkList *)malloc(sizeof(LinkList));
     LinkList *temp = p;
-    for (int i = 1; i <= 5; i++)
+    for (int i = 1; i <= 10; i++)
     {
         LinkList *a = (LinkList *)malloc(sizeof(LinkList));
         a->data = i;
@@ -24,7 +24,6 @@ LinkList *initLinkListHead()
 
     return p;
 }
-
 
 void getElem(LinkList *p, int pos)
 {
@@ -75,15 +74,35 @@ void display(LinkList *p)
     printf("\n");
 }
 
+void GetMidNode(LinkList *L)
+{
+    LinkList *search, *mid;
+    search = mid = L;
+    while (search->next != NULL)
+    {
+        if (search->next->next != NULL)
+        {
+            search = search->next->next;
+            mid = mid->next;
+        }
+        else
+        {
+            search = search->next;
+        }
+    }
+    printf("中间节点的值为%d", mid->data);
+}
+
 int main()
 {
-    printf("初始化链表为\n");
-    LinkList *p = initLinkListTail();
+
+    LinkList *p = initLinkListHead();
     display(p);
-    deleteElem(p, 2);
-    display(p);
-    insertElem(p, 8, 2);
-    display(p);
+    GetMidNode(p);
+    // deleteElem(p, 2);
+    // display(p);
+    // insertElem(p, 8, 2);
+    // display(p);
     // getElem(p, 3);
     return 0;
 }
